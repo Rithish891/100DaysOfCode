@@ -27,7 +27,8 @@ life = 6
 
 while in_game:
 
-    letter = input("enter a letter: ").lower()
+    letter = input("Take a guess: ").lower()
+    print("\n")
 
     if letter in blank_list:
         print(f"You have already guessed the letter {letter}...Try guessing another letter!")
@@ -46,7 +47,8 @@ while in_game:
         print(blank_list)
 
         if life == 0:
-            print("YOU LOOSE!")
+            print("YOU LOOSE!\n")
+            print(f"The word is {word}...Better luck next time!!!")
             in_game = False
 
     if '_' not in blank_list:
