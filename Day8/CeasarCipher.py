@@ -22,16 +22,13 @@ def decrypt(decode_message, shift_number):
 
 
 option = input("Type 'encode' to encode your message...Type 'decode' to decode your message...")
-print(option)
 message = input("Enter your message here...\n").lower()
-print(message)
 shift = int(input("Type the shift number..."))
 
+if option == "encode":
+    final_encrypt = encrypt(message, shift)
+    print(f"Your encrypted message is {final_encrypt}")
 
-# if message == "encode":
-#     final_encrypt = encrypt(message, shift)
-#     print(f"Your encrypted message is {final_encrypt}")
-#
-# elif message == "decode":
-#     final_decrypt = decrypt(message, shift)
-#     print(f"Your encrypted message is {final_decrypt}")
+elif option == "decode":
+    final_decrypt = decrypt(message, shift)
+    print(f"Your encrypted message is {final_decrypt}")
