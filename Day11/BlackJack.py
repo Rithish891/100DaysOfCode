@@ -69,7 +69,7 @@ def play_game():
             if player_should_add == "y":
                 player_cards.append(add_card())
             else:
-                is_game_over = True
+                game_over = True
 
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(add_card())
