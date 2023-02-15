@@ -12,20 +12,21 @@ logo = """
       `------'                           |__/           
 """
 
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
 
 def add_card():
-    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
     return card
 
 
-def calculate_score(cards):
-    if sum(cards) == 21 and len(cards) == 2:
+def total_score(card):
+    if sum(card) == 21 and len(card) == 2:
         return 0
-    if 11 in cards and sum(cards) > 21:
-        cards.remove(11)
-        cards.append(1)
-    return sum(cards)
+    if 11 in card and sum(card) > 21:
+        card.remove(11)
+        card.append(1)
+    return sum(card)
 
 
 def compare(player_score, computer_score):
@@ -57,8 +58,8 @@ def play_game():
     game_over = False
 
     while not game_over:
-        player_score = calculate_score(player_cards)
-        computer_score = calculate_score(computer_cards)
+        player_score = total_score(player_cards)
+        computer_score = total_score(computer_cards)
         print(f"Your cards are {player_cards} and the score is {player_score}")
         print(f"Computer's first card is {computer_cards[0]}")
 
@@ -73,7 +74,7 @@ def play_game():
 
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(add_card())
-        computer_score = calculate_score(computer_cards)
+        computer_score = total_score(computer_cards)
 
     print(f"Your final cards are {player_cards} and your final score is {player_score}")
     print(f"Computer's final cards are {computer_cards} and the final score is {computer_score}")
