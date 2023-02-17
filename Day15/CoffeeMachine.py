@@ -1,9 +1,11 @@
 import menu 
+import art
 
 money = 0
 coffee = True
 
 while coffee:
+    print(art.logo)
     choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
     if choice == "off":
         coffee = False
